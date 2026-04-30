@@ -1,10 +1,10 @@
 CC=gcc
 
-all : lab2
+all : lab3
 	
-lab2: command.o main.o string_parser.o
+lab3: command.o main.o string_parser.o
 	$(CC) -o $@ $^
-	gcc -o lab2 command.o main.o
+	gcc -o lab3 command.o main.o string_parser.o
 	
 main.o: main.c
 	$(CC) -c $^
@@ -16,4 +16,4 @@ command.o: command.c command.h
 	$(CC) -c $<
 	
 clean:
-	rm -f core *.o lab2
+	rm -f core *.o lab3
